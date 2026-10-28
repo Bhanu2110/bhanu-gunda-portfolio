@@ -38,6 +38,42 @@ const EXPERIENCE = {
 
 const PROJECTS = [
   {
+    title: "Lavin labs",
+    tag: "Laboratory & Quality Management",
+    points: [
+      "Comprehensive Laboratory and Quality Management System covering sample management, testing workflows, and equipment calibration.",
+      "Role-based authentication managing quality audits, HR records, attendance, invoicing, and supplier management.",
+      "Automated PDF report generation, scheduled email notifications, and secure REST APIs built with React, TypeScript, and Supabase.",
+    ],
+  },
+  {
+    title: "Booklet (Rental Management System)",
+    tag: "Rental Property Management",
+    points: [
+      "Modern Rental Property Management application streamlining property administration, unit listings, and tenant management.",
+      "Automated rent collection tracking, expense categorization, owner payouts, and real-time financial reporting.",
+      "Responsive dashboard UI with secure database management and CRUD operations powered by React.js and Supabase.",
+    ],
+  },
+  {
+    title: "Lenseption Lane",
+    tag: "Photography & Studio Platform",
+    points: [
+      "Designed and developed a responsive photography platform featuring high-resolution portfolio galleries.",
+      "Online studio booking system with real-time slot scheduling, inquiry management, and automated booking workflows.",
+      "Clean, user-centric interface built with React.js and Supabase for seamless customer interactions.",
+    ],
+  },
+  {
+    title: "Little Champs",
+    tag: "Legacy Website Modernization",
+    points: [
+      "Modernized a legacy static HTML website by completely rebuilding it into a modular React.js architecture.",
+      "Engineered reusable components and optimized project structure while strictly retaining the original design aesthetic.",
+      "Improved performance, maintainability, and code organization with modern front-end best practices.",
+    ],
+  },
+  {
     title: "Real Estate Application",
     tag: "Role-based property management",
     points: [
@@ -182,7 +218,8 @@ function Index() {
       <section id="work" className="w-full px-6 py-20 md:px-10" style={{ background: "var(--muted)" }}>
         <div className="mx-auto w-full max-w-6xl">
           <SectionHeading kicker="Work" title="Projects I've built" />
-          <div className="grid gap-6 md:grid-cols-3">
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((project) => (
               <article
                 key={project.title}
@@ -205,7 +242,8 @@ function Index() {
               </article>
             ))}
           </div>
-          <div className="mt-10">
+
+          <div>
             <h3 className="font-display text-lg font-semibold text-foreground">Personal projects</h3>
             <div className="mt-4 flex flex-wrap gap-3">
               {PERSONAL_PROJECTS.map((project) => (
