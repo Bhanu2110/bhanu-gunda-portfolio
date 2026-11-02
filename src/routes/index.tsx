@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import { InteractiveHero } from "@/components/interactive-hero";
-
+import { ScrollToTopButton } from "@/components/scroll-to-top";
+import { ContactForm } from "@/components/contact-form";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -23,7 +23,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
 const EXPERIENCE = {
   role: "Software Developer — React.js & Supabase",
   company: "Syncall Technology Solutions",
@@ -35,7 +34,6 @@ const EXPERIENCE = {
     "Collaborated with cross-functional teams to ship features, fix bugs and optimize application performance.",
   ],
 };
-
 const PROJECTS = [
   {
     title: "Lavin labs",
@@ -101,7 +99,6 @@ const PROJECTS = [
     ],
   },
 ];
-
 const PERSONAL_PROJECTS = [
   { name: "E-Commerce Website", stack: "Java · HTML · CSS · Bootstrap · MySQL" },
   { name: "Apartment Connect", stack: "Spring Boot · MySQL · Thymeleaf" },
@@ -109,7 +106,6 @@ const PERSONAL_PROJECTS = [
   { name: "Weather App", stack: "React JS" },
   { name: "Food Recipe App", stack: "React JS" },
 ];
-
 const SKILLS: { group: string; items: string[] }[] = [
   {
     group: "Frontend",
@@ -125,10 +121,9 @@ const SKILLS: { group: string; items: string[] }[] = [
   },
   {
     group: "Tools & Cloud",
-    items: ["Git", "VS Code", "Eclipse", "Maven", "Postman", "AWS"],
+    items: ["Git", "VS Code", "Eclipse", "Maven", "Postman", "Hostinger"],
   },
 ];
-
 const EDUCATION = [
   {
     school: "Kamala Institute of Technology and Science",
@@ -149,7 +144,6 @@ const EDUCATION = [
     result: "CGPA 8.3",
   },
 ];
-
 const CERTIFICATIONS = [
   "Full-Stack Web Development — Udemy",
   "Java Programming — Oracle",
@@ -160,10 +154,8 @@ const CERTIFICATIONS = [
   "Excel — Great Learning",
   "MS Office — SETWIN",
 ];
-
 const ACADEMIC_PROJECTS =
   "Major project: enhancing underwater images quickly for real-time use. Mini project: greenhouse monitoring and controlling system.";
-
 function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
   return (
     <div className="mb-10">
@@ -179,7 +171,6 @@ function Index() {
   return (
     <main className="bg-background">
       <InteractiveHero />
-
       {/* About */}
       <section id="about" className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10">
         <SectionHeading kicker="About" title="React developer who ships" />
@@ -213,12 +204,10 @@ function Index() {
           </div>
         </div>
       </section>
-
       {/* Work */}
       <section id="work" className="w-full px-6 py-20 md:px-10" style={{ background: "var(--muted)" }}>
         <div className="mx-auto w-full max-w-6xl">
           <SectionHeading kicker="Work" title="Projects I've built" />
-
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((project) => (
               <article
@@ -242,8 +231,7 @@ function Index() {
               </article>
             ))}
           </div>
-
-          <div>
+          <div className="mt-8">
             <h3 className="font-display text-lg font-semibold text-foreground">Personal projects</h3>
             <div className="mt-4 flex flex-wrap gap-3">
               {PERSONAL_PROJECTS.map((project) => (
@@ -259,7 +247,6 @@ function Index() {
           </div>
         </div>
       </section>
-
       {/* Skills */}
       <section id="skills" className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10">
         <SectionHeading kicker="Skills" title="What I work with" />
@@ -276,7 +263,6 @@ function Index() {
           ))}
         </div>
       </section>
-
       {/* Education */}
       <section id="education" className="w-full px-6 py-20 md:px-10" style={{ background: "var(--muted)" }}>
         <div className="mx-auto w-full max-w-6xl">
@@ -285,9 +271,8 @@ function Index() {
             {EDUCATION.map((entry, index) => (
               <div
                 key={entry.school}
-                className={`flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between ${
-                  index > 0 ? "border-t border-border" : ""
-                }`}
+                className={`flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between ${index > 0 ? "border-t border-border" : ""
+                  }`}
               >
                 <div>
                   <p className="font-display text-base font-semibold text-foreground">{entry.school}</p>
@@ -332,11 +317,11 @@ function Index() {
           </div>
         </div>
       </section>
-
       {/* Contact */}
       <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10">
         <SectionHeading kicker="Contact" title="Let's work together" />
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
           <a
             href="mailto:gundabhanu10@gmail.com"
             className="rounded-2xl border border-border bg-card p-6 shadow-card transition-transform hover:-translate-y-1"
@@ -353,22 +338,36 @@ function Index() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Phone</p>
             <p className="mt-3 font-display text-lg font-semibold text-foreground">9701606826</p>
           </a>
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
+          <a
+            href="https://www.linkedin.com/in/bhanu-gunda-37511921b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl border border-border bg-card p-6 shadow-card transition-transform hover:-translate-y-1"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">LinkedIn</p>
-            <p className="mt-3 text-sm text-muted-foreground">Find me on LinkedIn — Bhanu Gunda</p>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
+            <p className="mt-3 font-display text-lg font-semibold text-foreground">Bhanu Gunda</p>
+            <p className="mt-1 text-sm text-muted-foreground">linkedin.com/in/bhanu-gunda-37511921b</p>
+          </a>
+          <a
+            href="https://github.com/Bhanu19486"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl border border-border bg-card p-6 shadow-card transition-transform hover:-translate-y-1"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">GitHub</p>
-            <p className="mt-3 text-sm text-muted-foreground">My repositories are on GitHub — Bhanu Gunda</p>
+            <p className="mt-3 font-display text-lg font-semibold text-foreground">Bhanu Gunda</p>
+            <p className="mt-1 text-sm text-muted-foreground">https://github.com/Bhanu19486</p>
+          </a>
           </div>
+          <ContactForm />
         </div>
       </section>
-
       <footer className="border-t border-border py-8">
         <p className="text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Bhanu Gunda · Built with React
         </p>
       </footer>
+      <ScrollToTopButton />
     </main>
   );
 }

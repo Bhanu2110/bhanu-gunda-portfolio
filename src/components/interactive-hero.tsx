@@ -27,6 +27,7 @@ const POINT_MS = 2100;
 type Zone = "idle" | "left" | "right" | "center";
 
 const NAV_LINKS = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
@@ -207,7 +208,7 @@ export function InteractiveHero() {
       className="relative min-h-screen overflow-hidden"
       style={{ background: "var(--hero-bg)" }}
     >
-      <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-5 md:px-12">
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 backdrop-blur-md bg-background/70 border-b border-border/40 transition-colors">
         <a
           href="#top"
           className="font-display text-base font-semibold tracking-tight text-foreground md:text-lg"

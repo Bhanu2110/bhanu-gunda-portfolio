@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -69,15 +69,13 @@
   --rose-deep: oklch(0.74 0.08 22);
   --maroon: oklch(0.45 0.09 20);
   --maroon-deep: oklch(0.33 0.07 18);
-  --hero-bg: radial-gradient(
-    130% 100% at 50% 42%,
-    oklch(0.995 0.003 25) 0%,
-    oklch(0.975 0.014 25) 34%,
-    oklch(0.93 0.032 25) 52%,
-    var(--rose-soft) 68%,
-    var(--rose-deep) 86%,
-    oklch(0.64 0.09 20) 100%
-  );
+  --hero-bg: radial-gradient(130% 100% at 50% 42%,
+      oklch(0.995 0.003 25) 0%,
+      oklch(0.975 0.014 25) 34%,
+      oklch(0.93 0.032 25) 52%,
+      var(--rose-soft) 68%,
+      var(--rose-deep) 86%,
+      oklch(0.64 0.09 20) 100%);
   --shadow-hero: 0 30px 80px -30px color-mix(in oklab, var(--maroon) 35%, transparent);
   --shadow-card: 0 16px 40px -24px color-mix(in oklab, var(--maroon) 28%, transparent);
 }
@@ -106,12 +104,12 @@
   --rose-deep: oklch(0.32 0.05 20);
   --maroon: oklch(0.78 0.08 25);
   --maroon-deep: oklch(0.9 0.05 25);
-  --hero-bg: radial-gradient(
-    130% 100% at 50% 42%,
-    oklch(0.24 0.03 20) 0%,
-    oklch(0.28 0.04 22) 50%,
-    oklch(0.33 0.05 22) 100%
-  );
+  --hero-bg: radial-gradient(130% 100% at 50% 42%,
+      oklch(0.24 0.03 20) 0%,
+      oklch(0.28 0.04 22) 50%,
+      oklch(0.33 0.05 22) 100%);
+  --shadow-hero: 0 30px 80px -30px color-mix(in oklab, var(--maroon) 25%, transparent);
+  --shadow-card: 0 16px 40px -24px color-mix(in oklab, var(--maroon) 20%, transparent);
 }
 
 @layer base {
@@ -131,10 +129,12 @@
 }
 
 @keyframes cursor-nudge {
+
   0%,
   100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(7px, 7px);
   }
@@ -145,6 +145,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -152,10 +153,12 @@
 }
 
 @keyframes float-hint {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-6px);
   }
